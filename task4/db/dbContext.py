@@ -2,11 +2,11 @@ from mysql.connector import MySQLConnection, Error
 
 def connect():
     db_config = {
-            'host': 'localhost',
-            'database': 'python_bai3',
-            'user': 'root',
-            'password': ''
-        }
+    'host': 'localhost',
+    'database': 'student',
+    'user': 'root',
+    'password': ''
+    }
     conn = None
     try:
         conn = MySQLConnection(**db_config)
@@ -16,7 +16,4 @@ def connect():
         print(error)
         return conn
 
-def disconnect(conn: MySQLConnection):
-    if conn is not None:
-        conn.rollback()
-        conn.close()
+
